@@ -1,0 +1,20 @@
+﻿@page
+@{
+    Layout = "_Layout1";
+}
+<form id='float-form'>
+    <h2 style='text-align:center'><a href='/Home/Index' title='Inicio' class='text-decoration-none'>Stock<span style='color: blue; display:inline'>Up</a></span></h2>
+    <h3 style='text-align:center'>Cadastrar Usuário</h3>
+    <p><label for='email'>Nome</label><p>
+    <p><input type='text' class="form-control" placeholder="Insira seu nome" width="100%" /></p>
+    <p><label for='email'>Sobrenome</label><p>
+    <p><input type='text' class="form-control" placeholder="Insira seu sobrenome" width="100%" /></p>
+    <p><label for='email'>Email</label><p>
+    <p><input type='text' class="form-control" placeholder="Insira seu email" width="100%" /></p>
+    <p><label for='senha'>Senha</label><p>
+    <p><input type='password' class="form-control" placeholder="Insira sua senha" width="100%" /></p>
+    <p><label for='senha'>Repetir Senha</label><p>
+    <p><input type='password' class="form-control" placeholder="Insira sua senha" width="100%" /></p>
+    <input type='button' onclick='window.location.href="/Home/Login"' class='btn btn-primary btn-lg' value='Salvar'>  <input type='button' onclick='window.location.href="/Home/Index"' class='btn btn-danger btn-lg' value='Cancelar' />
+
+</form>

@@ -1,0 +1,71 @@
+﻿@page
+
+@{
+    Layout = "_Layout2";
+
+}
+<div id='dashboard'>
+    <h2>Lista de produtos</span></h2>
+    <p>
+        <input type='text' width="80%" placeholder='Pesquisar' />
+        <button class='btn btn-primary'>Pesquisar</button>
+        <button class='btn btn-success' onclick="window.location.href='/EditarProduto'">Adicionar</button>
+    </p>
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Unidade</th>
+                <th>Preço</th>
+                <th>Quant.</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td>arroz</td>
+                <td>pct</td>
+                <td>20,9</td>
+                <td>50</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>bolo</td>
+                <td>un</td>
+                <td>5,2</td>
+                <td>0</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>feijão</td>
+                <td>pct</td>
+                <td>13,8</td>
+                <td>20</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>macarrão</td>
+                <td>pct</td>
+                <td>3,5</td>
+                <td>30</td>
+                <td>D</td>
+            </tr>
+
+            <tr onclick="window.location='/Home/InformacoesDoProduto';">
+                <td><a href='/Home/InformacoesDoProduto'>1</a></td>
+                <td><a href='/Home/InformacoesDoProduto'>arroz</a></td>
+                <td><a href='/Home/InformacoesDoProduto'>pct</a></td>
+                <td><a href='/Home/InformacoesDoProduto'>20,9</a></td>
+                <td><a href='/Home/InformacoesDoProduto'>50</a></td>
+                <td><a href='/Home/InformacoesDoProduto'>A</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

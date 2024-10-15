@@ -1,0 +1,38 @@
+﻿@page
+@{
+    Layout = "_Layout2";
+}
+<div id='dashboard'>
+    <h2>Editar produto</h2>
+    <form>
+        <p><label for='email'>Código</label><p>
+        <p><input type='text' class="form-control" placeholder="" width="100%" /></p>
+        <p><label for='email'>Nome</label><p>
+        <p><input type='text' class="form-control" placeholder="" width="100%" /></p>
+        <p><label for='email'>Descrição</label><p>
+            <textarea cols='80' rows='3'></textarea>
+        <p><label for='email'>Preço</label><p>
+        <p><input type='text' class="form-control" placeholder="" width="100%" /></p>
+        <p><label for='senha'>Quantidade</label><p>
+        <p><input type='text' class="form-control" placeholder="" width="100%" /></p>
+        <p><label for='senha'>Estoque Mínimo</label><p>
+        <p><input type='text' class="form-control" placeholder="" width="100%" /></p>
+        <p>
+            <label for='senha'>Categoria</label><br />
+
+            <select class="form-control">
+                <option value="">---</option>
+                <option value="">Alimentos</option>
+                <option value="">Produtos de Higiene Pessoal</option>
+                <option value="">Produtos de Limpeza</option>
+            </select>
+        </p>
+
+        <p><label for='senha'>Fornecedor</label><p>
+        <p><input type='text' class="form-control" placeholder="" width="100%" /></p>
+        <input type='button' onclick='window.location.href="DashboardTabela"' class='btn btn-primary btn-lg' value='Salvar' />
+        <input type="button" class='btn btn-danger btn-lg' onclick='window.location.href="InformacoesDoProduto"' value="Cancelar" />
+    </form>
+
+
+</div>

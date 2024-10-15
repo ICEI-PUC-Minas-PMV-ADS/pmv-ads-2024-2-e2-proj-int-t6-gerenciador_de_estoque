@@ -2,13 +2,13 @@
     Layout = "_Layout1";
 }
 <form id='float-form'>
-    <h2 style='text-align:center'><a href='/Index' title='Inicio' class='text-decoration-none'>Stock<span style='color: blue; display:inline'>Up</a></span></h2>
+    <h2 style='text-align:center'><a href='/Home/Index' title='Inicio' class='text-decoration-none'>Stock<span style='color: blue; display:inline'>Up</a></span></h2>
     <h3 style='text-align:center'>Acesse sua conta</h3>
     <p><label for='email'>Email</label><p>
     <p><input type='text' class="form-control" placeholder="Insira seu email" width="100%" /></p>
     <p><label for='senha'>Senha</label><p>
     <p><input type='password' class="form-control" placeholder="Insira sua senha" width="100%" /></p>
     <h4 style='color: green'><a href='forget-password.html'>Esqueci a senha</a></h4></p>
-    <input type='button' class='btn btn-primary btn-lg' value='Entrar' onclick='window.location.href = "DashboardTabela"' />
-    <input type='button' class='btn btn-success btn-lg' value='Cadastre-se' onclick="document.location.href = '/CadastrarSenha',true;" />
+    <input type='button' class='btn btn-primary btn-lg' value='Entrar' onclick='window.location.href = "/Home/DashboardTabela"' />
+    <input type='button' class='btn btn-success btn-lg' value='Cadastre-se' onclick="document.location.href = '/Home/CadastrarSenha',true;" />
 </form>
