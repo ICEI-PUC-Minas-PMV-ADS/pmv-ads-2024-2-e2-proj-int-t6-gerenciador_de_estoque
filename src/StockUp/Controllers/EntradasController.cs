@@ -36,5 +36,49 @@ namespace StockUp.Controllers
 
             return View(entrada);
         }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            
+                return NotFound();
+          
+            var dados = await _context.Entradas.FindAsync(id);
+
+            if (dados == null)
+                return NotFound();
+
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Guid id, Entrada entrada)
+        {
+            if (id != entrada.Id)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                _context.Entradas.Update(entrada);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+        public async Task<IActionResult> Details (Guid? id)
+        {
+            if (id == null) 
+                return NotFound();
+
+            var dados = await _context.Entradas.FindAsync(id);
+
+            if (dados == null)
+                return NotFound();
+
+            return View(dados); 
+        }
     }
 }
