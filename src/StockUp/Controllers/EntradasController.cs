@@ -80,5 +80,38 @@ namespace StockUp.Controllers
 
             return View(dados); 
         }
+
+        public async Task<IActionResult> Delete(Guid? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var dados = await _context.Entradas.FindAsync(id);
+
+            if (dados == null)
+                return NotFound();
+
+            return View(dados);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(Guid? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var dados = await _context.Entradas.FindAsync(id);
+
+            if (dados == null)
+                return NotFound();
+
+            _context.Entradas.Remove(dados);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+
     }
+
 }
