@@ -18,5 +18,23 @@ namespace StockUp.Controllers
 
             return View(dados);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Entrada entrada) 
+        {
+            if (ModelState.IsValid) 
+            {
+                _context.Entradas.Add(entrada);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return View(entrada);
+        }
     }
 }
