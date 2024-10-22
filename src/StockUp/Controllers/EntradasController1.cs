@@ -4,18 +4,24 @@ using StockUp.Models;
 
 namespace StockUp.Controllers
 {
-    public class EntradasController : Controller
+    public class EntradasController1 : Controller
     {
         private readonly AppDbContext _context;
+        
+        public List<ListaEntradas> dados {  get; set; }
 
-        public EntradasController(AppDbContext context)
-        {
+        public ListaEntradas data { get; set; }
+        
+        public EntradasController1(AppDbContext context) 
+        { 
             _context = context;
         }
 
         public async Task<IActionResult> Index()
         {
-            var dados = await _context.ListaEntradas.ToListAsync();
+            
+            
+            dados = await _context.ListaEntradas.ToListAsync();
 
             return View(dados);
         }
@@ -24,15 +30,17 @@ namespace StockUp.Controllers
         {
             List<Produto> produtos = await _context.Produtos.ToListAsync();
 
+            string[] productsArray = new string[] { "Product1", "Product2", "Product3" };
+
             ViewBag.ProductsId = produtos;
 
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Entrada entrada)
+        public async Task<IActionResult> Create(Entrada entrada) 
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) 
             {
                 _context.Entradas.Add(entrada);
                 await _context.SaveChangesAsync();
@@ -42,26 +50,18 @@ namespace StockUp.Controllers
             return View(entrada);
         }
 
-        public async Task<IActionResult> Edit(String id)
+        public async Task<IActionResult> Edit(int? id)
         {
-            Guid myId = new Guid(id);
-
-
-
             if (id == null)
-
+            
                 return NotFound();
 
-            var data = await _context.ListaEntradas.FindAsync(myId);
-
-            List<Produto> produtos = await _context.Produtos.ToListAsync();
-
-            ViewBag.Products = produtos;
+            var data = await _context.ListaEntradas.FindAsync(id);
+            //var lista = await _context.ListaEntradas.FindAsync(id);
 
             if (data == null)
                 return NotFound();
 
-            ViewBag.data = data;
 
             return View();
         }
@@ -72,19 +72,19 @@ namespace StockUp.Controllers
             if (id != entrada.Id)
                 return NotFound();
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Entradas.Update(entrada);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            
+
             return View();
         }
 
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details (Guid? id)
         {
-            if (id == null)
+            if (id == null) 
                 return NotFound();
 
             var dados = await _context.ListaEntradas.FindAsync(id);
@@ -92,7 +92,7 @@ namespace StockUp.Controllers
             if (dados == null)
                 return NotFound();
 
-            return View(dados);
+            return View(dados); 
         }
 
         public async Task<IActionResult> Delete(Guid? id)
@@ -100,7 +100,7 @@ namespace StockUp.Controllers
             if (id == null)
                 return NotFound();
 
-            var dados = await _context.ListaEntradas.FindAsync(id);
+            var dados = await _context.Entradas.FindAsync(id);
 
             if (dados == null)
                 return NotFound();
@@ -124,5 +124,8 @@ namespace StockUp.Controllers
 
             return RedirectToAction("Index");
         }
+
+
     }
+
 }

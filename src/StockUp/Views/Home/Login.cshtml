@@ -1,0 +1,20 @@
+﻿@page
+@model StockUp.Views.Home.LoginModel
+@{
+    //var ErrorMessage = ViewData["Message"]?.ToString();
+}
+<h1>Login Page</h1>
+<form method="post" asp-action="Login" asp-controller="Home">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="Email" />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="Password" />
+
+    <button type="submit">Login</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}

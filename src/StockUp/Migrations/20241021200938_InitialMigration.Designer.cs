@@ -12,7 +12,7 @@ using StockUp.Models;
 namespace StockUp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241007204748_InitialMigration")]
+    [Migration("20241021200938_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace StockUp.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -74,7 +74,7 @@ namespace StockUp.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("AtualizadoEm")
-                        .ValueGeneratedOnAddOrUpdate()
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Categoria")

@@ -13,9 +13,17 @@ namespace StockUp.Controllers
     {
         private readonly AppDbContext _context;
 
+        public string UserName { get; set; }
+        public string UserId { get; set; }
+        public string UserType { get; set; }
+        public string UserEmail { get; set; }
+
         public ProdutosController(AppDbContext context)
         {
             _context = context;
+
+            
+
         }
 
         // GET: Produtos
@@ -48,8 +56,13 @@ namespace StockUp.Controllers
         // GET: Produtos/Create
         public IActionResult Create()
         {
+            UserName = HttpContext.Session.GetString("UserName");
+            UserId = HttpContext.Session.GetString("UserId");
+            UserEmail = HttpContext.Session.GetString("UserEmail");
+
             ViewData["FornecedorId"] = new SelectList(_context.Fornecedores, "Id", "Nome");
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Email");
+            //ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Email");
+            ViewData["UsuarioId"] = UserId;
             return View();
         }
 
@@ -57,10 +70,15 @@ namespace StockUp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Nome,Preco,Quantidade,Descricao,EstoqueMinimo,Categoria")] Produto produto, string nomeFornecedor)
         {
+            UserName = HttpContext.Session.GetString("UserName");
+            UserId = HttpContext.Session.GetString("UserId");
+            UserEmail = HttpContext.Session.GetString("UserEmail");
+
             if (string.IsNullOrEmpty(nomeFornecedor))
             {
                 ModelState.AddModelError("NomeFornecedor", "O nome do fornecedor é obrigatório.");
-                ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Email", produto.UsuarioId);
+                //ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Email", produto.UsuarioId);
+                ViewData["UsuarioId"] = UserId;
                 return View(produto);
             }
 
@@ -81,8 +99,11 @@ namespace StockUp.Controllers
             produto.FornecedorId = fornecedor.Id;
             ModelState.Remove("Fornecedor");
 
-            if (ModelState.IsValid)
+            
+
+            if (!ModelState.IsValid)
             {
+                produto.UsuarioId = Guid.Parse(UserId);
                 produto.Id = Guid.NewGuid();
                 produto.CriadoEm = DateTime.Now;
                 produto.AtualizadoEm = DateTime.Now;
@@ -90,8 +111,8 @@ namespace StockUp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Email", produto.UsuarioId);
+
+            ViewData["UsuarioId"] = UserId;
             return View(produto);
         }
 
@@ -152,7 +173,7 @@ namespace StockUp.Controllers
             produto.FornecedorId = fornecedor.Id;
             ModelState.Remove("Fornecedor");
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
