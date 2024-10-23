@@ -21,9 +21,11 @@ namespace StockUp.Models
         public required string Senha { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Criado Em")]
         public DateTime CriadoEm { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Atualizado Em")]
         public DateTime AtualizadoEm { get; set; }
 
         public ICollection<Produto>? Produtos { get; set; }

@@ -43,9 +43,11 @@ namespace StockUp.Models
         public required Fornecedor Fornecedor { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Criado Em")]
         public DateTime CriadoEm { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Atualizado Em")]
         public DateTime AtualizadoEm { get; set; }
 
         public ICollection<Saida>? Saidas { get; set; }
