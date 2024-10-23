@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StockUp.Models;
 using System.Security.Claims;
 
 namespace StockUp.Controllers
 {
+    [Authorize]
     public class EntradasController : Controller
     {
         private readonly AppDbContext _context;
