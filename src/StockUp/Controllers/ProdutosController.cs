@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,28 +11,32 @@ using StockUp.Models;
 
 namespace StockUp.Controllers
 {
+    [Authorize]
     public class ProdutosController : Controller
     {
         private readonly AppDbContext _context;
 
-        public string UserName { get; set; }
-        public string UserId { get; set; }
-        public string UserType { get; set; }
-        public string UserEmail { get; set; }
-
         public ProdutosController(AppDbContext context)
         {
             _context = context;
-
-            
-
         }
 
         // GET: Produtos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string keyword)
         {
-            var appDbContext = _context.Produtos.Include(p => p.Fornecedor).Include(p => p.Usuario);
-            return View(await appDbContext.ToListAsync());
+            var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (UsuarioId == null) return Unauthorized();
+
+            var produtos = _context.Produtos.Include(p => p.Fornecedor).Include(p => p.Usuario).Where(p => p.UsuarioId == Guid.Parse(UsuarioId));
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                produtos = produtos.Where(p => p.Nome.Contains(keyword) ||
+                                               p.Descricao.Contains(keyword) ||
+                                               p.Fornecedor.Nome.Contains(keyword));
+            }
+
+            return View(await produtos.ToListAsync());
         }
 
         // GET: Produtos/Details/5
@@ -54,11 +60,10 @@ namespace StockUp.Controllers
         }
 
         // GET: Produtos/Create
+        [AllowAnonymous]
         public IActionResult Create()
         {
-            UserName = HttpContext.Session.GetString("UserName");
-            UserId = HttpContext.Session.GetString("UserId");
-            UserEmail = HttpContext.Session.GetString("UserEmail");
+            var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
             ViewData["FornecedorId"] = new SelectList(_context.Fornecedores, "Id", "Nome");
             //ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Email");
@@ -67,12 +72,11 @@ namespace StockUp.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Nome,Preco,Quantidade,Descricao,EstoqueMinimo,Categoria")] Produto produto, string nomeFornecedor)
         {
-            UserName = HttpContext.Session.GetString("UserName");
-            UserId = HttpContext.Session.GetString("UserId");
-            UserEmail = HttpContext.Session.GetString("UserEmail");
+            var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
             if (string.IsNullOrEmpty(nomeFornecedor))
             {
@@ -99,11 +103,11 @@ namespace StockUp.Controllers
             produto.FornecedorId = fornecedor.Id;
             ModelState.Remove("Fornecedor");
 
-            
+            produto.UsuarioId = Guid.Parse(UserId);
+            ModelState.Remove("Usuario");
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                produto.UsuarioId = Guid.Parse(UserId);
                 produto.Id = Guid.NewGuid();
                 produto.CriadoEm = DateTime.Now;
                 produto.AtualizadoEm = DateTime.Now;
@@ -173,7 +177,11 @@ namespace StockUp.Controllers
             produto.FornecedorId = fornecedor.Id;
             ModelState.Remove("Fornecedor");
 
-            if (!ModelState.IsValid)
+            var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            produto.UsuarioId = Guid.Parse(UserId);
+            ModelState.Remove("Usuario");
+
+            if (ModelState.IsValid)
             {
                 try
                 {

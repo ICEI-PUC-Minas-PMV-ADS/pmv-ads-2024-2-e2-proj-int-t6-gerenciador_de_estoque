@@ -23,12 +23,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Usuarios/Login";
     });
 
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(20); // Set session timeout to 20 minutes
-    options.Cookie.HttpOnly = true; // Set HttpOnly flag to true
-    options.Cookie.IsEssential = true; // Make session cookie essential for GDPR compliance
-});
+//builder.Services.AddSession(options =>
+//{
+//    options.IdleTimeout = TimeSpan.FromMinutes(20); // Set session timeout to 20 minutes
+//    options.Cookie.HttpOnly = true; // Set HttpOnly flag to true
+//    options.Cookie.IsEssential = true; // Make session cookie essential for GDPR compliance
+//});
 
 var app = builder.Build();
 
@@ -50,7 +50,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Add session middleware
-app.UseSession(); // This enables session state management in the application
+//app.UseSession(); // This enables session state management in the application
 
 app.MapControllerRoute(
     name: "default",
