@@ -21,11 +21,11 @@ namespace StockUp.Controllers
             var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (UsuarioId == null) return Unauthorized();
 
-            var entradas = _context.Entradas.Include(e => e.Produto.UsuarioId == Guid.Parse(UsuarioId));
+            var entradas = await _context.Entradas.Include(e => e.Produto).Where(e => e.Produto.UsuarioId == Guid.Parse(UsuarioId)).
+                ToListAsync();
+            
 
-            var dados = await _context.Entradas.ToListAsync();
-
-            return View(dados);
+            return View(entradas);
         }
 
         public async Task<IActionResult> Create()
