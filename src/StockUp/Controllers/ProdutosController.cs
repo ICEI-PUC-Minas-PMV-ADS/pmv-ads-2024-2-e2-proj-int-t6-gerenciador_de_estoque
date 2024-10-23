@@ -113,6 +113,17 @@ namespace StockUp.Controllers
                 produto.AtualizadoEm = DateTime.Now;
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
+
+                var entrada = new Entrada
+                {
+                    Id = Guid.NewGuid(),
+                    Produto = produto,
+                    Quantidade = produto.Quantidade,
+                    CriadoEm = DateTime.Now,
+                };
+                _context.Entradas.Add(entrada);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
 

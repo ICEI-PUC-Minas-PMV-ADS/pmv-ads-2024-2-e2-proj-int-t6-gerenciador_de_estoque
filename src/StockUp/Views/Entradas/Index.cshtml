@@ -1,9 +1,7 @@
-﻿@model IEnumerable<StockUp.Models.ListaEntradas>
+﻿@model IEnumerable<StockUp.Models.Entrada>
 
 @{
     ViewData["Title"] = "Index";
-    
-
 }
 
 <h1>Lista de Produtos</h1>
@@ -15,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                @Html.DisplayNameFor(model => model.Produto)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Quantidade)
@@ -27,12 +25,10 @@
         </tr>
     </thead>
     <tbody>
-
-
-@foreach (var item in @Model) {
+@foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
+                @Html.DisplayFor(modelItem => item.Produto.Descricao)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantidade)
@@ -41,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.CriadoEm)
             </td>
             <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id='@item.Id'>Editar</a> |
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
                     <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Visualizar</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
             </td>

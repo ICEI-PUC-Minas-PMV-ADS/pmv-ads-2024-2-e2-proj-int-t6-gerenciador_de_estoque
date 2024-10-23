@@ -15,15 +15,5 @@ namespace StockUp.Models
         public DbSet<Saida> Saidas { get; set; }
 
         public DbSet<Entrada> Entradas { get; set; }
-
-        public DbSet<ListaEntradas> ListaEntradas { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            // Map the view to the model
-            modelBuilder.Entity<ListaEntradas>().ToView("ListaEntradas").HasKey(e => e.Id);
-        }
     }
 }

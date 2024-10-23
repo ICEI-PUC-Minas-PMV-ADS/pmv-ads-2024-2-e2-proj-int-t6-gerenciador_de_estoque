@@ -1,8 +1,7 @@
-﻿@model StockUp.Models.ListaEntradas
+﻿@model StockUp.Models.Entrada
 
 @{
     ViewData["Title"] = "Details";
-   
 }
 
 <h1>Dados do produto</h1>
@@ -11,25 +10,24 @@
     <h4>Entrada</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Produto.Descricao)
         </dd>
-        <dt class="col-sm-2">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Quantidade)
         </dt>
-        <dd class="col-sm-10">
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Quantidade)
         </dd>
-        <dt class="col-sm-2">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CriadoEm)
         </dt>
-        <dd class="col-sm-10">
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CriadoEm)
         </dd>
-
     </dl>
 </div>
 <div>

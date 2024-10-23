@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StockUp.Models;
+using System.Security.Claims;
 
 namespace StockUp.Controllers
 {
@@ -15,7 +16,12 @@ namespace StockUp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var dados = await _context.ListaEntradas.ToListAsync();
+            var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (UsuarioId == null) return Unauthorized();
+
+            var entradas = _context.Entradas.Include(e => e.Produto.UsuarioId == Guid.Parse(UsuarioId));
+
+            var dados = await _context.Entradas.ToListAsync();
 
             return View(dados);
         }
@@ -52,7 +58,7 @@ namespace StockUp.Controllers
 
                 return NotFound();
 
-            var data = await _context.ListaEntradas.FindAsync(myId);
+            var data = await _context.Entradas.FindAsync(myId);
 
             List<Produto> produtos = await _context.Produtos.ToListAsync();
 
@@ -87,7 +93,7 @@ namespace StockUp.Controllers
             if (id == null)
                 return NotFound();
 
-            var dados = await _context.ListaEntradas.FindAsync(id);
+            var dados = await _context.Entradas.FindAsync(id);
 
             if (dados == null)
                 return NotFound();
@@ -100,7 +106,7 @@ namespace StockUp.Controllers
             if (id == null)
                 return NotFound();
 
-            var dados = await _context.ListaEntradas.FindAsync(id);
+            var dados = await _context.Entradas.FindAsync(id);
 
             if (dados == null)
                 return NotFound();
