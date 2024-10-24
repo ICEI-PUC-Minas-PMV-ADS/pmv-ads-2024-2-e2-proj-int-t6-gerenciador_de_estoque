@@ -192,6 +192,38 @@ namespace StockUp.Controllers
             produto.UsuarioId = Guid.Parse(UserId);
             ModelState.Remove("Usuario");
 
+            var produtoAntigo = await _context.Produtos.AsNoTracking().FirstOrDefaultAsync(p => p.Id == produto.Id);
+
+            if (produtoAntigo == null)
+            {
+                return NotFound();
+            }
+
+            int quantidadeAlterada = produto.Quantidade - produtoAntigo.Quantidade;
+
+            if (quantidadeAlterada > 0)
+            {
+                Entrada entrada = new Entrada
+                {
+                    Id = Guid.NewGuid(),
+                    Produto = produto,
+                    CriadoEm = DateTime.Now,
+                    Quantidade = quantidadeAlterada
+                };
+                _context.Entradas.Add(entrada);
+            }
+            else if (quantidadeAlterada < 0)
+            {
+                Saida saida = new Saida
+                {
+                    Id = Guid.NewGuid(),
+                    Produto = produto,
+                    CriadoEm = DateTime.Now,
+                    Quantidade = Math.Abs(quantidadeAlterada)
+                };
+                _context.Saidas.Add(saida);
+            }
+
             if (ModelState.IsValid)
             {
                 try
@@ -229,6 +261,7 @@ namespace StockUp.Controllers
                 .Include(p => p.Fornecedor)
                 .Include(p => p.Usuario)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (produto == null)
             {
                 return NotFound();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StockUp.Models;
 using System.Security.Claims;
@@ -52,26 +53,25 @@ namespace StockUp.Controllers
 
         public async Task<IActionResult> Edit(String id)
         {
-            Guid myId = new Guid(id);
-
-
-
             if (id == null)
-
                 return NotFound();
 
-            var data = await _context.Entradas.FindAsync(myId);
+            var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (UsuarioId == null) return Unauthorized();
 
-            List<Produto> produtos = await _context.Produtos.ToListAsync();
+            List<Produto> produtos = await _context.Produtos.Include(p => p.Fornecedor)
+                .Include(p => p.Usuario)
+                .Where(p => p.UsuarioId == Guid.Parse(UsuarioId))
+                .ToListAsync();
 
-            ViewBag.Products = produtos;
+            var entrada = await _context.Entradas.FindAsync(Guid.Parse(id));
 
-            if (data == null)
+            if (entrada == null)
                 return NotFound();
 
-            ViewBag.data = data;
+            ViewBag.Produtos = new SelectList(produtos, "Id", "Nome", entrada.ProdutoId);
 
-            return View();
+            return View(entrada);
         }
 
         [HttpPost]
@@ -95,12 +95,14 @@ namespace StockUp.Controllers
             if (id == null)
                 return NotFound();
 
-            var dados = await _context.Entradas.FindAsync(id);
+            var entrada = await _context.Entradas
+                .Include(e => e.Produto)
+                .FirstOrDefaultAsync(e => e.Id == id);
 
-            if (dados == null)
+            if (entrada == null)
                 return NotFound();
 
-            return View(dados);
+            return View(entrada);
         }
 
         public async Task<IActionResult> Delete(Guid? id)
@@ -108,12 +110,14 @@ namespace StockUp.Controllers
             if (id == null)
                 return NotFound();
 
-            var dados = await _context.Entradas.FindAsync(id);
+            var entrada = await _context.Entradas
+                .Include(e => e.Produto)
+                .FirstOrDefaultAsync(e => e.Id == id);
 
-            if (dados == null)
+            if (entrada == null)
                 return NotFound();
 
-            return View(dados);
+            return View(entrada);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -122,12 +126,14 @@ namespace StockUp.Controllers
             if (id == null)
                 return NotFound();
 
-            var dados = await _context.Entradas.FindAsync(id);
+            var entrada = await _context.Entradas
+                .Include(e => e.Produto)
+                .FirstOrDefaultAsync(e => e.Id == id);
 
-            if (dados == null)
+            if (entrada == null)
                 return NotFound();
 
-            _context.Entradas.Remove(dados);
+            _context.Entradas.Remove(entrada);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");

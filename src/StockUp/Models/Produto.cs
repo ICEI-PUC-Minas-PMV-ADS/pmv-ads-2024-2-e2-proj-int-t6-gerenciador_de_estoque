@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using StockUp.Models.Validations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StockUp.Models
@@ -24,12 +25,15 @@ namespace StockUp.Models
         public float Preco { get; set; }
 
         [Required(ErrorMessage = "Quantidade é obrigatório")]
+        [Range(0, int.MaxValue, ErrorMessage = "A quantidade não pode ser menor que 0")]
+        [QuantidadeMinimaSuperiorEstoque(ErrorMessage = "A quantidade do produto deve ser maior ou igual ao estoque mínimo")]
         public int Quantidade { get; set; }
 
         [Required(ErrorMessage = "Descrição é obrigatório")]
         public required string Descricao { get; set; }
 
         [Required(ErrorMessage = "Estoque mínimo é obrigatório")]
+        [Range(0, int.MaxValue, ErrorMessage = "O estoque mínimo não pode ser menor que 0")]
         public int EstoqueMinimo { get; set; }
 
         [Required(ErrorMessage = "Categoria é obrigatória")]
