@@ -1,15 +1,13 @@
-﻿@model StockUp.Models.Entrada
+﻿@model StockUp.Models.Saida
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Details";
     Layout = "_Layout3";
 }
 
 <div id="dashboard">
-
-<h4>Tem certeza que deseja remover esta entrada?</h4>
+<h4>Dados da saída</h4>
 <div>
-    <h4>Entrada</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -31,11 +29,9 @@
             @Html.DisplayFor(model => model.CriadoEm)
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <a asp-action="Index" class="btn btn-info">Voltar</a>
-        <input type="submit" value="Apagar" class="btn btn-danger" />
-    </form>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model?.Id">Editar</a>
+    <a asp-action="Index" class="btn btn-info">Voltar</a>
 </div>
 </div>

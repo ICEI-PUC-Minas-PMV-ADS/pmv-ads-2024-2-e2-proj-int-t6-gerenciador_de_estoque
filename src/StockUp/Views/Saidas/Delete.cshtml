@@ -1,4 +1,4 @@
-﻿@model StockUp.Models.Entrada
+﻿@model StockUp.Models.Saida
 
 @{
     ViewData["Title"] = "Delete";
@@ -9,7 +9,7 @@
 
 <h4>Tem certeza que deseja remover esta entrada?</h4>
 <div>
-    <h4>Entrada</h4>
+    <h4>Saida</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -31,7 +31,7 @@
             @Html.DisplayFor(model => model.CriadoEm)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <a asp-action="Index" class="btn btn-info">Voltar</a>

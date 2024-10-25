@@ -1,16 +1,18 @@
-﻿@model IEnumerable<StockUp.Models.Entrada>
+﻿@model IEnumerable<StockUp.Models.Saida>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout3";
 }
+
 <div id="dashboard">
 
-<h4>Lista de Entradas</h4>
+<h4>Lista de Saídas</h4>
+
 <p>
-    <a asp-action="Create" class="btn btn-success" >Adicionar nova entrada</a>
+    <a asp-action="Create" class="btn btn-success">Adicionar nova saída</a>
 </p>
-<table class="table table-striped">
+<table class="table">
     <thead>
         <tr>
             <th>

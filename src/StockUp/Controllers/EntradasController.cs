@@ -22,16 +22,22 @@ namespace StockUp.Controllers
             var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (UsuarioId == null) return Unauthorized();
 
-            var entradas = await _context.Entradas.Include(e => e.Produto).Where(e => e.Produto.UsuarioId == Guid.Parse(UsuarioId)).
-                ToListAsync();
+            var entradas = await _context.Entradas
+                .Include(e => e.Produto)
+                .Where(e => e.Produto.UsuarioId == Guid.Parse(UsuarioId))
+                .ToListAsync();
             
-
             return View(entradas);
         }
 
         public async Task<IActionResult> Create()
         {
-            List<Produto> produtos = await _context.Produtos.ToListAsync();
+            var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (UsuarioId == null) return Unauthorized();
+
+            List<Produto> produtos = await _context.Produtos
+                .Where(e => e.UsuarioId == Guid.Parse(UsuarioId))
+                .ToListAsync();
 
             ViewBag.ProductsId = produtos;
 
@@ -41,8 +47,16 @@ namespace StockUp.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Entrada entrada)
         {
-            if (!ModelState.IsValid)
+            Produto produto = await _context.Produtos.FindAsync(entrada.ProdutoId);
+            if (produto == null) return NotFound();
+
+            entrada.Produto = produto;
+            ModelState.Remove("Produto");
+
+            if (ModelState.IsValid)
             {
+                entrada.Id = Guid.NewGuid();
+                entrada.CriadoEm = DateTime.Now;
                 _context.Entradas.Add(entrada);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -77,10 +91,15 @@ namespace StockUp.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, Entrada entrada)
         {
-            if (id != entrada.Id)
-                return NotFound();
+            if (id != entrada.Id) return NotFound();
 
-            if (!ModelState.IsValid)
+            Produto produto = await _context.Produtos.FindAsync(entrada.ProdutoId);
+            if (produto == null) return NotFound();
+
+            entrada.Produto = produto;
+            ModelState.Remove("Produto");
+
+            if (ModelState.IsValid)
             {
                 _context.Entradas.Update(entrada);
                 await _context.SaveChangesAsync();

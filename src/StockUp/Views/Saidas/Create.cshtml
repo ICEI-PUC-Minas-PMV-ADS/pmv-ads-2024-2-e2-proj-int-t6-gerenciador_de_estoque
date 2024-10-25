@@ -1,0 +1,44 @@
+﻿@model StockUp.Models.Saida
+
+@{
+    ViewData["Title"] = "Create";
+    List<Produto> products = ViewBag.ProductsId;
+    Layout = "_Layout3";
+}
+
+<div id="dashboard">
+<h4>Adicionar nova saída</h4>
+
+<h4>Saida</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             <div class="form-group mb-3">
+                <label asp-for="ProdutoId" class="control-label"></label>
+                <select asp-for="ProdutoId" class ="form-control">
+                        @foreach (Produto product in products)
+                        {
+                            <option value="@product.Id">@product.Nome</option>
+                        }
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <input type="submit" value="Adicionar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
