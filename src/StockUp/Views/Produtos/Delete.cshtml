@@ -2,56 +2,12 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "_Layout3";
 }
+<div id="dashboard">
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f8ff;
-    }
-    .container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        max-width: 880px;
-        margin-top: 70px;
-    }
-    h1 {
-        color: #333;
-        margin-top: 0;
-    }
-    .info-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .info-table tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    .info-table td {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-    .info-table td:first-child {
-        font-weight: bold;
-        width: 40%;
-    }
-    .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
-    .btn-secondary {
-        background-color: #007bff;
-        color: white;
-    }
-</style>
-
-<h4>Tem a certeza que deseja apagar esse produto?</h4>
-<table class="info-table">
+<h4>Tem a certeza que deseja deletar esse produto?</h4>
+<table class="table table-striped">
     <tr>
         <td>ID</td>
         <td>@Model.Id</td>
@@ -84,6 +40,8 @@
 
 <form asp-action="Delete">
     <input type="hidden" asp-for="Id" />
-    <input type="submit" value="Delete" class="btn btn-danger" />
-    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+		<a asp-action="Index" class="btn btn-primary">Cancelar</a>
+		<input type="submit" value="Deletar" class="btn btn-danger" />
 </form>
+
+</div>

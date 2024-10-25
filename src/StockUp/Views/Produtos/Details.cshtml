@@ -2,60 +2,12 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "_Layout3";
 }
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f8ff;
-    }
-    .container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        max-width: 880px;
-        margin-top: 70px;
-    }
-    h1 {
-        color: #333;
-        margin-top: 0;
-    }
-    .info-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .info-table tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    .info-table td {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-    .info-table td:first-child {
-        font-weight: bold;
-        width: 40%;
-    }
-    .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
-    .btn:hover {
-        background-color: #0056b3;
-    }
-    .btn-secondary {
-        background-color: #dc3545;
-        color: white;
-    }
-</style>
+<div id="dashboard">
 
 <h4>Informações do produto</h4>
-<table class="info-table">
+<table class="table table-striped">
     <tr>
         <td>ID</td>
         <td>@Model.Id</td>
@@ -85,5 +37,6 @@
         <td>@Model.Fornecedor.Nome</td>
     </tr>
 </table>
-<a asp-action="Edit" asp-route-id="@Model.Id" class="btn">Editar</a>
-<a asp-action="Delete" asp-route-id="@Model.Id" value="Delete" class="btn btn-secondary">Deletar</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Delete" asp-route-id="@Model.Id" value="Delete" class="btn btn-danger">Deletar</a>
+</div>

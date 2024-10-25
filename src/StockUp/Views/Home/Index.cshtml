@@ -1,8 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "_Layout2";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class='meio pad'>
+    <h1>Stock<span style='color: blue'>Up</span></h1>
+    <h2>Gerencie seu estoque com um <span style='color: blue'>sistema simples e pratico.</span></h2>
+    <p>Tenha sempre em mãos o controle de seus estoques pessoais, evitando desperdicio de tempo e dinheiro. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    <p><button class='btn btn-primary btn-lg' onclick='window.location.href = "/Usuarios/Login"'>Comece agora</button>
+</div>
+
+<div class='meio noshow'>
+    <p><img src='~/img/imagem-direita.png' /></p>
 </div>

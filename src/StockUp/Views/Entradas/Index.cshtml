@@ -2,14 +2,15 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout3";
 }
+<div id="dashboard">
 
-<h1>Lista de Produtos</h1>
-
+<h4>Lista de Entradas</h4>
 <p>
-    <a asp-action="Create" class="btn btn-success" >Adicionar novo produto</a>
+    <a asp-action="Create" class="btn btn-success" >Adicionar nova entrada</a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -39,9 +40,11 @@
             <td>
                     <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
                     <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Visualizar</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+</div>

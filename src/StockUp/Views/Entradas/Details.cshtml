@@ -2,12 +2,12 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "_Layout3";
 }
 
-<h1>Dados do produto</h1>
-
+<div id="dashboard">
+<h4>Dados da entrada</h4>
 <div>
-    <h4>Entrada</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -31,6 +31,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Index" class="btn btn-info">Voltar</a> |
-    <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model?.Id">Editar</a> 
+		<a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model?.Id">Editar</a>
+        <a asp-action="Index" class="btn btn-info">Voltar</a> |
+     
+</div>
+
 </div>

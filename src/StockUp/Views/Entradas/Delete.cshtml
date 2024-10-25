@@ -2,11 +2,12 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "_Layout3";
 }
 
-<h1>Remover um veículo</h1>
+<div id="dashboard">
 
-<h3>Tem certeza que deseja remover este registro?</h3>
+<h4>Tem certeza que deseja remover esta entrada?</h4>
 <div>
     <h4>Entrada</h4>
     <hr />
@@ -36,4 +37,5 @@
         <a asp-action="Index" class="btn btn-info">Voltar</a>
         <input type="submit" value="Apagar" class="btn btn-danger" /> |
     </form>
+</div>
 </div>
