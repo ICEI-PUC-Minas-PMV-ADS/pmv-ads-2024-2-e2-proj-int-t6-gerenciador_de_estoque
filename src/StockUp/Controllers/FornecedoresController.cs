@@ -18,9 +18,11 @@ namespace StockUp.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var dados = await _context.Fornecedores.ToListAsync();
+
+            return View(dados);
         }
     }
 }

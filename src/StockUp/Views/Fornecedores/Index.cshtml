@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<StockUp.Models.Fornecedor>
+
+@{
     ViewData["Title"] = "Index";
     Layout = "_Layout3";
 }
@@ -96,25 +98,23 @@
     <thead>
         <tr>
             <th>
-                Nome
+                @Html.DisplayNameFor(Model => Model.Nome)
             </th>
             <th>
-                Criado Em
+                @Html.DisplayNameFor(Model => Model.CriadoEm)
             </th>
         </tr>
     </thead>
     <tbody>
-            <tr>
-               @*  <td>
-                    <a style="text-decoration: none;" asp-action="Details" asp-route-id="@item.Id">@item.Nome</a>
-                </td> *@
-                <td>
-                    Nome teste
-                </td>
-                <td>
-                    10/10/2024
-                </td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a style="text-decoration: none;" asp-action="Details" asp-route-id="@item.Id">@item.Nome</a>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.CriadoEm)</td>
+                </tr>
+            }
     </tbody>
 </table>
 </div>

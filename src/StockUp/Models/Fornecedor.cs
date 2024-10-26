@@ -15,6 +15,7 @@ namespace StockUp.Models
         public required string Nome { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Criado em")]
         public DateTime CriadoEm { get; set; }
 
         public ICollection<Produto>? Produtos { get; set; }
