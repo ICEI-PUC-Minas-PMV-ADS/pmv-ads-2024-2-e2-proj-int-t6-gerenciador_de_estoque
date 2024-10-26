@@ -1,0 +1,22 @@
+﻿@model StockUp.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout3";
+}
+<div id="dashboard">
+
+    <h4>Informações do fornecedor</h4>
+    <table class="table table-striped">
+        <tr>
+            <td>ID</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Nome</td>
+            <td>@Model.Nome</td>
+        </tr>
+    </table>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" value="Delete" class="btn btn-danger">Deletar</a>
+</div>
