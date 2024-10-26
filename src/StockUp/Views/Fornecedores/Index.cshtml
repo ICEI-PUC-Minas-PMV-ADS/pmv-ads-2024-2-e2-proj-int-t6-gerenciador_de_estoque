@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout3";
+}
+<div id="dashboard">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+    }
+
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        max-width: 880px;
+        margin-top: 70px;
+    }
+
+    h1 {
+        color: #333;
+        margin-top: 0;
+    }
+
+    .search-bar {
+        margin-bottom: 20px;
+    }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+    .btn {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    form {
+        display: flex;
+    }
+
+    .container-button {
+        gap: 1rem;
+    }
+</style>
+
+<h4>Lista de Fornecedores</h4>
+<div class="search-bar">
+    <form method="get" asp-action="Index">
+        <input type="text" name="keyword" value="@ViewData["CurrentFilter"]" placeholder="Pesquisar" class="form-control" />
+        <div class="container-button">
+            <button type="submit" class="btn btn-primary">Pesquisar</button>
+            <a asp-action="Create" class="btn btn-success">Adicionar</a>
+        </div>
+    </form>
+</div>
+<table class="info-table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Criado Em
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+               @*  <td>
+                    <a style="text-decoration: none;" asp-action="Details" asp-route-id="@item.Id">@item.Nome</a>
+                </td> *@
+                <td>
+                    Nome teste
+                </td>
+                <td>
+                    10/10/2024
+                </td>
+            </tr>
+    </tbody>
+</table>
+</div>
