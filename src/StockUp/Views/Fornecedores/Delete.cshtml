@@ -1,0 +1,27 @@
+﻿@model StockUp.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_Layout3";
+}
+<div id="dashboard">
+
+    <h4>Tem a certeza que deseja deletar esse fornecedor?</h4>
+    <table class="table table-striped">
+        <tr>
+            <td>ID</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Nome</td>
+            <td>@Model.Nome</td>
+        </tr>
+    </table>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index" class="btn btn-primary">Cancelar</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" />
+    </form>
+
+</div>

@@ -117,5 +117,38 @@ namespace StockUp.Controllers
             }
             return View(fornecedor);
         }
+
+        // GET: Produtos/Delete/5
+        public async Task<IActionResult> Delete(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var fornecedores = await _context.Fornecedores.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (fornecedores == null)
+            {
+                return NotFound();
+            }
+
+            return View(fornecedores);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            var fornecedor = await _context.Fornecedores.FindAsync(id);
+            if (fornecedor != null)
+            {
+                _context.Fornecedores.Remove(fornecedor);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
