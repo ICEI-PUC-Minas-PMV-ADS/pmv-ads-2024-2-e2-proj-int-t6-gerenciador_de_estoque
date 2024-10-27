@@ -21,17 +21,23 @@ namespace StockUp.Controllers
         // GET: Fornecedores/Index
         public async Task<IActionResult> Index(string keyword)
         {
-            var fornecedoresQuery = _context.Fornecedores.AsQueryable();
+            var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (UsuarioId == null) return Unauthorized();
+
+            var fornecedoresQuery = _context.Fornecedores
+                .Include(f => f.Produtos)
+                .Where(f => f.Produtos.Any(p => p.UsuarioId == Guid.Parse(UsuarioId)));
 
             if (!string.IsNullOrEmpty(keyword))
             {
-                fornecedoresQuery = fornecedoresQuery.Where(p => p.Nome.Contains(keyword));
+                fornecedoresQuery = fornecedoresQuery.Where(f => f.Nome.Contains(keyword));
             }
 
             var fornecedores = await fornecedoresQuery.ToListAsync();
 
             return View(fornecedores);
         }
+
 
 
         // GET: Fornecedores/Details/id
