@@ -10,7 +10,7 @@ Por exemplo:
  
 | **Caso de Teste** 	| **CT-01 – Cadastrar perfil** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-001 - A	O usuário deve poder criar sua conta na aplicação. |
+|	Requisito Associado 	| RF-001 - O usuário deve poder criar sua conta na aplicação. |
 | Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar na aplicação. |
 | Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://stockup.com/src/index.html<br> - Clicar em "Criar conta" <br> - Preencher os campos obrigatórios (e-mail, nome, senha, confirmação de senha) <br> - Clicar em "Continuar" |
 |Critério de Êxito | - O cadastro foi realizado com sucesso. |
