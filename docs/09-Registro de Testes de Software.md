@@ -6,13 +6,33 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 | **Caso de Teste** 	| **CT-01 – Cadastrar perfil** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
-|Registro de evidência | www.teste.com.br/drive/ct-01 |
+|	Requisito Associado 	| RF-001 - O usuário deve poder criar sua conta na aplicação.. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/5f97d835-4d68-46dc-8db4-46cf6d87fff2)|
 
 | **Caso de Teste** 	| **CT-02 – Realizar login** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-00Y - A aplicação deve permitir que um usuário previamente cadastrado faça login |
-|Registro de evidência | www.teste.com.br/drive/ct-02 |
+|	Requisito Associado 	| RF-002 - O usuário registrado deve poder fazer login utilizando suas credenciais (e-mail e senha). |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4e5bbb5-55a5-4c90-b208-057bb8b84ca8)|
+
+| **Caso de Teste** 	| **CT-06 – Adicionar produto** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-002 - O usuário deve poder gerenciar seus produtos. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/ec273127-e625-4f9a-b62e-f12e600d99f9)|
+
+| **Caso de Teste** 	| **CT-07 – Listar produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-002 - O usuário deve poder gerenciar seus produtos. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b1b44387-6933-456c-b05c-a97bafd9ab29)|
+
+| **Caso de Teste** 	| **CT-08 – Atualizar produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-002 - O usuário deve poder gerenciar seus produtos. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b173850c-adc3-40a6-86a0-4aaf468ff9e6)|
+
+| **Caso de Teste** 	| **CT-09 – Excluir produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-002 - O usuário deve poder gerenciar seus produtos. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
 
 ## Avaliação
 
