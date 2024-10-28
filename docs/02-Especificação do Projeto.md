@@ -111,7 +111,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| A aplicação deve se adaptar a diferentes tamanhos de tela e dispositivos. | ALTA | 
 |RNF-002| O site deve ser compatível com os principais navegadores da web, como Chrome, Firefox, Safari e Edge. |  ALTA |
 |RNF-002| A aplicação deve processar requisições do usuário em no máximo 5 segundos. |  MÉDIA | 
-|RNF-002| O backend do sistema deve ser desenvolvido em linguagem C# e rodar em servidor Windows ou Linux, com o framework Microsoft .NET 5 |  BAIXA | 
+|RNF-002| O backend do sistema deve ser desenvolvido em linguagem C# e rodar em servidor Windows ou Linux, com o framework Microsoft .NET 8 |  BAIXA | 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
