@@ -57,7 +57,7 @@ Por exemplo:
 | Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://stockup.com/src/index.html<br> - Clicar no botão de "Editar" <br> - Preencher o campo de nome, quantidade, preço <br> - Clicar em "Salvar"|
 |Critério de Êxito | - As informações de produtos foram atualizados com sucesso. |
 |  	|  	|
-| Caso de Teste 	| CT-08 – Excluir produtos	|
+| Caso de Teste 	| CT-09 – Excluir produtos	|
 |Requisito Associado | RF-004	- O usuário deve poder deletar seus produtos. |
 | Objetivo do Teste 	| Verificar se o usuário consegue deletar produtos do estoque. |
 | Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://stockup.com/src/index.html<br> - Clicar no botão de "Deletar"|
