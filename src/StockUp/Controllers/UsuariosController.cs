@@ -12,6 +12,7 @@ using StockUp.Models;
 
 namespace StockUp.Controllers
 {
+    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly AppDbContext _context;
@@ -82,12 +83,6 @@ namespace StockUp.Controllers
         {
             await HttpContext.SignOutAsync();
             return RedirectToAction("Login", "Usuarios");
-        }
-
-        // GET: Usuarios
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Usuarios.ToListAsync());
         }
 
         // GET: Usuarios/Details/5
