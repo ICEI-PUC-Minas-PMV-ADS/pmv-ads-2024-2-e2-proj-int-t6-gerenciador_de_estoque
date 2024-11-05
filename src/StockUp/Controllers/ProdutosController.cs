@@ -289,5 +289,34 @@ namespace StockUp.Controllers
         {
             return _context.Produtos.Any(e => e.Id == id);
         }
+
+
+        public async Task<IActionResult> RelatorioEstoqueMinimo(string? keyword)
+        {
+            var UsuarioId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (UsuarioId == null) return Unauthorized();
+
+            var query = _context.Produtos
+                .Include(p => p.Fornecedor)
+                .Where(p => p.UsuarioId == Guid.Parse(UsuarioId));
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                query = query.Where(p => p.Nome.Contains(keyword));
+            }
+
+            var produtos = await query
+                .Select(p => new
+                {
+                    Nome = p.Nome,
+                    QuantidadeAtual = p.Quantidade,
+                    EstoqueMinimo = p.EstoqueMinimo,
+                    Fornecedor = p.Fornecedor.Nome,
+                    NecessidadeReposicao = p.Quantidade < p.EstoqueMinimo ? "Sim" : "Não"
+                })
+                .ToListAsync();
+
+            return View(produtos);
+        }
     }
 }

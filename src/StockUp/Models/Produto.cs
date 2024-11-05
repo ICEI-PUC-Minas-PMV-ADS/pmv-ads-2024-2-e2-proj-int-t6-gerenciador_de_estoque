@@ -26,7 +26,6 @@ namespace StockUp.Models
 
         [Required(ErrorMessage = "Quantidade é obrigatório")]
         [Range(0, int.MaxValue, ErrorMessage = "A quantidade não pode ser menor que 0")]
-        [QuantidadeMinimaSuperiorEstoque(ErrorMessage = "A quantidade do produto deve ser maior ou igual ao estoque mínimo")]
         public int Quantidade { get; set; }
 
         [Required(ErrorMessage = "Descrição é obrigatório")]

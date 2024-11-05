@@ -1,0 +1,46 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Relatório de Estoque Mínimo";
+    Layout = "_Layout3";
+}
+
+<div id="dashboard">
+
+    <h4>Relatório de Estoque Mínimo</h4>
+    <div class="search-bar">
+        <form method="get" asp-action="RelatorioEstoqueMinimo">
+            <input type="text" name="keyword" placeholder="Pesquisar" class="form-control" style="display:inline" />
+            <button type="submit" class="btn btn-primary">Pesquisar</button>
+            <a asp-action="Create" class="btn btn-success">Adicionar</a>
+            <a asp-action="Index" class="btn btn-secondary">Voltar para Produtos</a>
+        </form>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome do Produto</th>
+                <th>Quantidade Atual</th>
+                <th>Estoque Mínimo</th>
+                <th>Fornecedor</th>
+                <th>Necessidade de Reposição</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.QuantidadeAtual</td>
+                    <td>@item.EstoqueMinimo</td>
+                    <td>@item.Fornecedor</td>
+                    <td class="@(item.NecessidadeReposicao == "Sim" ? "text-danger" : "text-success")">
+                        @item.NecessidadeReposicao
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

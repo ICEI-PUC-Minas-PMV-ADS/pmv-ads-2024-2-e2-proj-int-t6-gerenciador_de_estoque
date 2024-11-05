@@ -9,14 +9,13 @@
 <h4>Lista de produtos</h4>
 <div class="search-bar">
     <form method="get" asp-action="Index">
-            <input type="text" name="keyword" value="@ViewData["CurrentFilter"]" placeholder="Pesquisar" class="form-control " style="display:inline"/>
-            <button type="submit" class="btn btn-primary">Pesquisar</button>  <a asp-action="Create" class="btn btn-success">Adicionar</a>
-        
-            
-           
-        
+        <input type="text" name="keyword" value="@ViewData["CurrentFilter"]" placeholder="Pesquisar" class="form-control " style="display:inline"/>
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+        <a asp-action="Create" class="btn btn-success">Adicionar</a>
+        <a asp-action="RelatorioEstoqueMinimo" class="btn btn-warning">Relatório de Estoque Mínimo</a>
     </form>
 </div>
+
 <table class="table table-striped">
     <thead>
         <tr>
