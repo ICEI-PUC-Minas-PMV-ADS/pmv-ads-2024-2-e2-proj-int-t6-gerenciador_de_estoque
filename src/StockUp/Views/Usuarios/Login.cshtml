@@ -23,7 +23,8 @@
                 <span asp-validation-for="Senha" class="text-danger"></span>
             </div>
             <div class="form-group mb-3 100">
-                <input type="submit" value="Entrar" class="btn btn-primary" />   <button class="btn btn-success" onClick="window.location.href='Create'">Cadastre-se</button>
+                <input type="submit" value="Entrar" class="btn btn-primary" />
+                <a asp-controller="Usuarios" asp-action="Create" class="btn btn-success">Cadastre-se</a>
             </div>
     </div>
 </div>
