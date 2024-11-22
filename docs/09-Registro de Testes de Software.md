@@ -86,7 +86,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 | **Caso de Teste** 	| **CT-19 – Relatório de estoque mínimo** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-003	O usuário deve poder gerenciar seus dados pessoais. |
+|	Requisito Associado 	| RF-006 - O usuário deve poder acessar o relatório de estoque mínimo. |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
 
 
