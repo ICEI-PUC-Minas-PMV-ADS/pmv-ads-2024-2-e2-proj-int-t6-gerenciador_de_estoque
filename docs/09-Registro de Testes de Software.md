@@ -47,7 +47,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 | **Caso de Teste** 	| **CT-12 – Editar entrada** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-005	O usuário deve poder ter acesso aos registros de entradas. |
-|Registro de evidência | [clique aqui]([https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a](https://sgapucminasbr-my.sharepoint.com/personal/1497792_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F1497792%5Fsga%5Fpucminas%5Fbr%2FDocuments%2Fgravacoes%2FCT%2D12%20%E2%80%93%20Editar%20entrada%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E7bc29ed3%2D87fa%2D4b84%2D8e01%2D88d6d6506004)|
+|Registro de evidência | [clique aqui](https://sgapucminasbr-my.sharepoint.com/personal/1497792_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F1497792%5Fsga%5Fpucminas%5Fbr%2FDocuments%2Fgravacoes%2FCT%2D12%20%E2%80%93%20Editar%20entrada%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E3ee6234d%2D3511%2D47b4%2D804f%2D9183c42a8f91)|
 
 | **Caso de Teste** 	| **CT-13 – Deletar entrada** 	|
 |:---:	|:---:	|
