@@ -7,7 +7,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 | **Caso de Teste** 	| **CT-01 – Cadastrar perfil** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-001 - O usuário deve poder criar sua conta na aplicação.. |
-|Registro de evidência | [link]([https://git-scm.com/](https://sgapucminasbr-my.sharepoint.com/personal/1497792_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F1497792%5Fsga%5Fpucminas%5Fbr%2FDocuments%2Fgravacoes%2FCT%2D01%20%E2%80%93%20Cadastrar%20perfil%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2feb043a%2D3771%2D4a61%2Dbad4%2De1b4567b21e0)|
+|Registro de evidência | [link]([https://sgapucminasbr-my.sharepoint.com/personal/1497792_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F1497792%5Fsga%5Fpucminas%5Fbr%2FDocuments%2Fgravacoes%2FCT%2D01%20%E2%80%93%20Cadastrar%20perfil%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2feb043a%2D3771%2D4a61%2Dbad4%2De1b4567b21e0]|
 
 | **Caso de Teste** 	| **CT-02 – Realizar login** 	|
 |:---:	|:---:	|
