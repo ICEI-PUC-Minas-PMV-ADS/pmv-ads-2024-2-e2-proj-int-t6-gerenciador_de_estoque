@@ -103,7 +103,44 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 ## Avaliação
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+Diversos testes foram realizados com sucesso, conforme registrado no Plano de Testes de Software. 
+Como pontos de melhoria foram identicados:
+ 
+ CT-01 – Cadastrar perfil
+ 
+- Validar se o e-mail possui @
+ 
+ 
+CT-02 – Realizar login
+ 
+- Validar se o e-mail possui @
+- Informar caso o email/senha estiver incorreta
+ 
+CT-10 – Criar entradas
+ 
+- Ao criar entrada, deve atualizar o estoque do produto (de acordo com material e fornecedor)
+ 
+CT-12 – Editar entradas
+ 
+- Ao editar entrada, deve atualizar o estoque do produto (de acordo com material e fornecedor)
+- Tirar a opcao de editar a data de criacao
+ 
+CT-13 – Deletar entrada
+ 
+- Ao deletar entrada, deve atualizar o estoque do produto (de acordo com material e fornecedor)
+ 
+CT-14 – Criar saída
+ 
+- Ao criar saida, deve atualizar o estoque do produto (de acordo com material e fornecedor)
+ 
+CT-16 – Editar saída
+ 
+- Ao editar saida, deve atualizar o estoque do produto (de acordo com material e fornecedor)
+- Tirar a opcao de editar a data de criacao
+ 
+CT-17 – Deletar saída
+ 
+- Ao excluir saida, deve atualizar o estoque do produto (de acordo com material e fornecedor)
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
