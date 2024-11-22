@@ -12,7 +12,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 | **Caso de Teste** 	| **CT-02 – Realizar login** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-002 - O usuário registrado deve poder fazer login utilizando suas credenciais (e-mail e senha). |
-|Registro de evidência | [clique aqui]([https://sgapucminasbr-my.sharepoint.com/personal/1497792_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F1497792%5Fsga%5Fpucminas%5Fbr%2FDocuments%2Fgravacoes%2FCT%2D01%20%E2%80%93%20Cadastrar%20perfil%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2feb043a%2D3771%2D4a61%2Dbad4%2De1b4567b21e0](https://sgapucminasbr-my.sharepoint.com/personal/1497792_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F1497792%5Fsga%5Fpucminas%5Fbr%2FDocuments%2Fgravacoes%2FCT%2D02%20%E2%80%93%20Realizar%20login%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E47003081%2Df5d1%2D4f8f%2D8a72%2D0a99a8031fe0)|
+|Registro de evidência | [clique aqui](https://sgapucminasbr-my.sharepoint.com/personal/1497792_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F1497792%5Fsga%5Fpucminas%5Fbr%2FDocuments%2Fgravacoes%2FCT%2D02%20%E2%80%93%20Realizar%20login%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E67018cd6%2Df22c%2D40fb%2D8a2a%2D97c50c59ad95)|
 
 | **Caso de Teste** 	| **CT-06 – Adicionar produto** 	|
 |:---:	|:---:	|
