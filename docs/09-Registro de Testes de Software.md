@@ -69,11 +69,6 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas. |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
 
-| **Caso de Teste** 	| **CT-17 – Excluir Saidas de produtos** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas. |
-|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
-
 | **Caso de Teste** 	| **CT-17 – Deletar saída** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas.  |
