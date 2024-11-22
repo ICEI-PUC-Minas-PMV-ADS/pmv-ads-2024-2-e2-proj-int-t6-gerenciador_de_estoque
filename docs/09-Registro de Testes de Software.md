@@ -39,20 +39,61 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-005	O usuário deve poder ter acesso aos registros de entradas. |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
 
+| **Caso de Teste** 	| **CT-09 – Listar entradas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-005	O usuário deve poder ter acesso aos registros de entradas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Editar entradas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-005	O usuário deve poder ter acesso aos registros de entradas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Eliminar entradas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-005	O usuário deve poder ter acesso aos registros de entradas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
 | **Caso de Teste** 	| **CT-09 – Realizar Saidas de produtos** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas. |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
 
-| **Caso de Teste** 	| **CT-09 – Gerenciar fornecedores** 	|
+| **Caso de Teste** 	| **CT-09 – Editar Saidas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Listar Saidas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Excluir Saidas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Listar fornecedores** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-008	O sistema deve cadastrar fornecedores, e o relacionar aos produtos. |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
 
-| **Caso de Teste** 	| **CT-09 – Gerenciar dados pessoais** 	|
+| **Caso de Teste** 	| **CT-09 – Editar fornecedores** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-008	O sistema deve cadastrar fornecedores, e o relacionar aos produtos. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Editar dados pessoais** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-003	O usuário deve poder gerenciar seus dados pessoais. |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Excluir conta** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-003	O usuário deve poder gerenciar seus dados pessoais. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
 
 ## Avaliação
 
