@@ -34,6 +34,26 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-002 - O usuário deve poder gerenciar seus produtos. |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
 
+| **Caso de Teste** 	| **CT-09 – Realizar entradas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-005	O usuário deve poder ter acesso aos registros de entradas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Realizar Saidas de produtos** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-009	O usuário deve poder ter acesso aos registros de saídas. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Gerenciar fornecedores** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-008	O sistema deve cadastrar fornecedores, e o relacionar aos produtos. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
+| **Caso de Teste** 	| **CT-09 – Gerenciar dados pessoais** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-003	O usuário deve poder gerenciar seus dados pessoais. |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/b4c15bb4-23f8-4e1f-9999-86cff628135a)|
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
