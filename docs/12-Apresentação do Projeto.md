@@ -7,11 +7,12 @@ Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do proje
 ## Título do Projeto
 
 Nome: StockUp 
-Marca: 
+
+![Marca](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-2-e2-proj-int-t6-gerenciador_de_estoque/blob/63bfaa42f4d92decbf6b4bcdbd455ab1744af8ce/docs/img/marcaStockup%20(2).png)
 
 ## Identidade Visual (Marca, Design)
 
-O grupo deve ter o cuidado em utilizar figuras, imagens, e cores dentro do contexto da solução proposta, de forma a manter a temática do problema.
+![Fonte e Paleta de Cores](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-2-e2-proj-int-t6-gerenciador_de_estoque/blob/63bfaa42f4d92decbf6b4bcdbd455ab1744af8ce/docs/img/fonte.png)
 
 > **Links Úteis**:
 > - [10 dicas de design para slides](https://rockcontent.com/blog/design-para-slides/)
